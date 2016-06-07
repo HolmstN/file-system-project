@@ -1,0 +1,13 @@
+<form action='/users/login' method='post'>
+  <fieldset>
+    <label for='username'>Username:</label>
+    <input name='username' type='text' value="<%= params[:username] %>"></input>
+  </fieldset>
+  <fieldset>
+    <label for='password'>Password:</label>
+    <input name='password' type='password'></input>
+  </fieldset>
+  <fieldset>
+    <button type='submit'>Sign In</button>
+  </fieldset>
+</form>

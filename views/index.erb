@@ -1,0 +1,24 @@
+<% if !user_signed_in? %>
+  <form action='/users/login'>
+    <button name="index-sign-in">Sign In</button>
+  </form>
+<% end %>
+
+<ul>
+  <% @files.each do |file| %>
+    <li>
+      <a href="/<%= file %>"><%= file %></a>
+      <a href='/<%= file %>/edit'>edit</a>
+      <a href='/<%= file %>/delete'>delete </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href='/new'>New Document</a>
+
+<% if user_signed_in? %>
+  <p class='user-status'>Signed in as <%= session[:username] %>.</p>
+  <form action='/users/signout'>
+    <button type='submit' name='signout'>Sign Out</button>
+  </form>
+<% end %>
